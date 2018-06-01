@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener {
     SeekBar seekBar;
@@ -19,7 +20,6 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
 
         seekBar = findViewById(R.id.seekBar);
         textView = findViewById(R.id.textView);
-        //seekBar.setEnabled(false);
         seekBar.setOnSeekBarChangeListener(this);
 
         context=getApplicationContext();
@@ -35,13 +35,6 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
             public void run() {
                 Log.e("asd","asd");
                 connection.openConnection(context);
-//                runOnUiThread(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        Log.e("asd2","asd2");
-//                        seekBar.setEnabled(true);
-//                    }
-//                });
             }
         }).start();
     }
